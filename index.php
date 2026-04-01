@@ -13,4 +13,22 @@ $router->get('/', function() use ($db) {
     $controller->index();
 });
 
+$router->get('/login', function() use ($db) {
+    require 'controllers/AuthController.php';
+    $controller = new AuthController($db);
+    $controller->login();
+});
+
+$router->post('/login', function() use ($db) {
+    require 'controllers/AuthController.php';
+    $controller = new AuthController($db);
+    $controller->authenticate();
+});
+
+$router->get('/logout', function() use ($db) {
+    require 'controllers/AuthController.php';
+    $controller = new AuthController($db);
+    $controller->logout();
+});
+
 $router->run();
