@@ -15,4 +15,10 @@ class UserModel {
 
         return $stmt->fetch();
     }
+
+    public function getAllUsers() {
+        $sql = "SELECT * FROM users";
+        return $this->db->query($sql)->fetchAll();
+    }
+
 }
