@@ -2,13 +2,18 @@
     session_start();
 } ?>
 
-<h1>Touche pas au klaxon</h1>
+<header>
+    <div class="container">
+
+<a href="/TOUCHE_PAS_AU_KLAXON/" class="btn text-dark">
+    <h1>Touche pas au klaxon</h1>
+</a>
 
 <nav>
 
 <?php if (!isset($_SESSION['user'])): ?>
 
-    <a href="/TOUCHE_PAS_AU_KLAXON/login" class="btn btn-primary">
+    <a href="/TOUCHE_PAS_AU_KLAXON/login" class="btn btn-dark">
         Connexion
     </a>
 
@@ -42,3 +47,5 @@
 <?php endif; ?>
 
 </nav>
+   </div>
+</header>
