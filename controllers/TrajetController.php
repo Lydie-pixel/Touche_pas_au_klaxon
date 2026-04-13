@@ -1,6 +1,7 @@
 <?php
 
 require_once "models/TrajetModel.php";
+require_once "helpers/auth.php";
 
 class TrajetController {
 
@@ -57,10 +58,6 @@ class TrajetController {
     public function edit($id) {
     requireLogin();
 
-    if (!isset($_POST['csrf']) || $_POST['csrf'] !== $_SESSION['csrf']) {
-    die("Requête invalide");
-    }
-
     $trajet = $this->model->find($id);
     $agences = $this->db->query("SELECT * FROM agences")->fetchAll();
 
@@ -93,10 +90,6 @@ public function update($id) {
 
 public function delete($id) {
     requireLogin();
-
-    if (!isset($_POST['csrf']) || $_POST['csrf'] !== $_SESSION['csrf']) {
-    die("Requête invalide");
-    }
 
     $this->model->delete($id);
 
