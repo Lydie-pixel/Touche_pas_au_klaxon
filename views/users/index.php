@@ -3,7 +3,7 @@
 <h2>Gestion des utilisateurs</h2>
 
     <table class="table table-striped">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th>Nom</th>
                 <th>Prénom</th>
@@ -17,23 +17,23 @@
             <?php foreach ($users as $user): ?>
                 <tr>
                     <td>
-                        <?= $user['last_name'] ?>
+                        <?= htmlspecialchars($user['last_name']) ?>
                     </td>
 
                     <td>
-                        <?= $user['first_name'] ?>
+                        <?= htmlspecialchars($user['first_name']) ?>
                     </td>
 
                     <td>
-                        <?= $user['tel'] ?>
+                        <?= htmlspecialchars($user['tel']) ?>
                     </td>
 
                     <td>
-                        <?= $user['email'] ?>
+                        <?= htmlspecialchars($user['email']) ?>
                     </td>
 
                     <td>
-                        <?= $user['role'] ?>
+                        <?= htmlspecialchars($user['role']) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

@@ -13,6 +13,15 @@ class HomeController {
     public function index() {
         $trajets = $this->model->getAvailableTrips();
 
-        require "views/home.php";
+            // Titre dynamique
+    if (!isset($_SESSION['user'])) {
+        $title = "Pour obtenir plus d'informations sur un trajet, veuillez vous connecter";
+    } elseif ($_SESSION['user']['role'] === 'admin') {
+        $title = "Gestion des trajets";
+    } else {
+        $title = "Trajets proposés";
+    }
+    
+    require "views/home.php";
     }
 }

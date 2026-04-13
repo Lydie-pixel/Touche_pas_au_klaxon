@@ -4,7 +4,9 @@
 
 <form method="POST" action="/TOUCHE_PAS_AU_KLAXON/login">
 
-    <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
+    <!-- CSRF token should be included in the form to prevent CSRF attacks. -->
+    <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>"> 
+
     <input type="email" name="email" placeholder="Email" required>
     <br><br>
 

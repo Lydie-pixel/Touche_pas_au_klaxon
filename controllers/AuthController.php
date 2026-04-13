@@ -14,30 +14,28 @@ class AuthController {
         require "views/login.php";
     }
 
-    public function authenticate() {
+public function authenticate() {
 
-        session_start();
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+    $user = $this->model->findByEmail($email);
 
-        $user = $this->model->findByEmail($email);
-
-        if ($user && $password === $user['password']) {
-
-            $_SESSION['user'] = $user;
-
-            header("Location: /TOUCHE_PAS_AU_KLAXON/");
-            exit;
-
-        } else {
-            echo "Identifiants incorrects";
-        }
-    }
-
-    public function logout() {
-        session_start();
-        session_destroy();
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user'] = $user;
         header("Location: /TOUCHE_PAS_AU_KLAXON/");
+        exit;
+    } else {
+        $_SESSION['error'] = "Identifiants incorrects";
+        header("Location: /TOUCHE_PAS_AU_KLAXON/login");
+        exit;
     }
+}
+
+public function logout() {
+    session_unset();
+    session_destroy();
+    header("Location: /TOUCHE_PAS_AU_KLAXON/");
+    exit;
+}
 }
