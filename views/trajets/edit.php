@@ -3,6 +3,7 @@
 <h2>Modifier un trajet</h2>
 
     <form method="POST" action="/TOUCHE_PAS_AU_KLAXON/trajets/edit/<?= $trajet['id'] ?>">
+        <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
 
     <select name="departure_id">
         <label>Départ</label>

@@ -17,11 +17,13 @@ class UserController {
     }
 
     public function __construct($db) {
+        requireLogin();
         $this->db = $db;
         $this->model = new UserModel($db);
     }
 
     public function create() {
+        requireLogin();
 
         requireAdmin();
         
@@ -32,12 +34,16 @@ class UserController {
 
         requireAdmin();
 
+        if (!isset($_POST['csrf']) || $_POST['csrf'] !== $_SESSION['csrf']) {
+        die("Requête invalide");
+        }
+        
         $data = [
             'first_name' => $_POST['first_name'],
             'last_name' => $_POST['last_name'],
             'email' => $_POST['email'],
             'tel' => $_POST['tel'],
-            'password' => $_POST['password'],
+            'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
             'role' => $_POST['role']
         ];
 

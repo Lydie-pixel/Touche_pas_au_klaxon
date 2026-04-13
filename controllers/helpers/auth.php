@@ -6,3 +6,10 @@ function requireAdmin() {
         exit;
     }
 }
+
+function requireLogin() {
+    if (!isset($_SESSION['user'])) {
+        header("Location: /TOUCHE_PAS_AU_KLAXON/login");
+        exit;
+    }
+}
