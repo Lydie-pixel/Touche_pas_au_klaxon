@@ -28,17 +28,9 @@ class UserController {
     }
 
 /**
- * Display the form to create a new user
- *
- * @return void
+ * User creation is not implemented
+ * as users are managed externally (as per project requirements)
  */
-    public function create() {
-        requireLogin();
-
-        requireAdmin();
-        
-        require "views/users/create.php";
-    }
 
 /**
  * Store a new user in database
