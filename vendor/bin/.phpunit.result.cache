@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"TrajetModelTest::testGetAvailableTripsReturnsArray":0.001,"TrajetModelTest::testCreateReturnsTrue":0,"AgenceModelTest::testIsUsedReturnsTrueWhenAgencyIsUsed":0.028}}
