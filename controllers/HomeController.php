@@ -10,6 +10,11 @@ class HomeController {
         $this->model = new TrajetModel($db);
     }
 
+/**
+ * Display the list of available trips
+ *
+ * @return void
+ */
     public function index() {
         $trajets = $this->model->getAvailableTrips();
 

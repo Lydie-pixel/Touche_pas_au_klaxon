@@ -10,11 +10,21 @@ class AuthController {
         $this->model = new UserModel($db);
     }
 
+/**
+ * Display the login form
+ *
+ * @return void
+ */
     public function login() {
         require "views/login.php";
     }
 
-public function authenticate() {
+/**
+ * Authenticate a user
+ *
+ * @return void
+ */
+    public function authenticate() {
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -32,6 +42,11 @@ public function authenticate() {
     }
 }
 
+/**
+ * Logout the current user
+ *
+ * @return void
+ */
 public function logout() {
     session_unset();
     session_destroy();
