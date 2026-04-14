@@ -11,7 +11,7 @@ class AgenceController {
 /**
  * Display the list of agencies
  *
- * @return array<int, array<string, mixed>>
+ * @return void
  */
 
     public function index() {
