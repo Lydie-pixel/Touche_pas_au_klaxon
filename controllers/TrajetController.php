@@ -8,6 +8,11 @@ class TrajetController {
     private $model;
     private $db;
 
+/**
+ * Display the list of available trips
+ *
+ * @return void
+ */
     public function index() {
 
     $trajets = $this->model->getAvailableTrips();
@@ -20,6 +25,12 @@ class TrajetController {
         $this->model = new TrajetModel($db);
     }
 
+/**
+ * Show create form for a new trip
+ *
+ * @return void
+ */
+
     public function create() {
         requireLogin();
 
@@ -30,6 +41,11 @@ class TrajetController {
         require "views/trajets/create.php";
     }
 
+/**
+ * Store a new trip in database
+ *
+ * @return void
+ */
     public function store() {
         requireLogin();
 
@@ -55,6 +71,12 @@ class TrajetController {
         exit;
     }
 
+/**
+ * Show edit form for a specific trip
+ *
+ * @param int $id Trip ID
+ * @return void
+ */
     public function edit($id) {
     requireLogin();
 
@@ -64,6 +86,12 @@ class TrajetController {
     require "views/trajets/edit.php";
 }
 
+/**
+ * Update a specific trip in database
+ *
+ * @param int $id Trip ID
+ * @return void
+ */
 public function update($id) {
     requireLogin();
 
@@ -88,6 +116,12 @@ public function update($id) {
     exit;
 }
 
+/**
+ * Delete a specific trip from database
+ *
+ * @param int $id Trip ID
+ * @return void
+ */
 public function delete($id) {
     requireLogin();
 

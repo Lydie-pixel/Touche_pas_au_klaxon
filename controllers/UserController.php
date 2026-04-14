@@ -8,6 +8,11 @@ class UserController {
     private $model;
     private $db;
 
+/**
+ * Display the list of users
+ *
+ * @return void
+ */
     public function index() {
 
         requireAdmin();
@@ -22,6 +27,11 @@ class UserController {
         $this->model = new UserModel($db);
     }
 
+/**
+ * Display the form to create a new user
+ *
+ * @return void
+ */
     public function create() {
         requireLogin();
 
@@ -30,6 +40,11 @@ class UserController {
         require "views/users/create.php";
     }
 
+/**
+ * Store a new user in database
+ *
+ * @return void
+ */
     public function store() {
 
         requireAdmin();

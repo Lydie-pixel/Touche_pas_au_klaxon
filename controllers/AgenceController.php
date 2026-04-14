@@ -8,6 +8,12 @@ class AgenceController {
     private $model;
     private $db;
 
+/**
+ * Display the list of agencies
+ *
+ * @return array<int, array<string, mixed>>
+ */
+
     public function index() {
 
     $title = "Gestion des agences";
@@ -23,13 +29,22 @@ class AgenceController {
         $this->db = $db;
         $this->model = new AgenceModel($db);
     }
-
+/**
+ * Display the form to create a new agency
+ * @return void
+ */
     public function create() {
 
     requireAdmin();
 
         require "views/agences/create.php";
     }
+
+/**
+ * Store a new agency in database
+ *
+ * @return void
+ */
 
     public function store() {
 
@@ -51,6 +66,11 @@ class AgenceController {
         exit;
     }
 
+/**
+ * Delete an agency
+ * @param int $id Agency ID
+ * @return bool
+ */
     public function delete($id) {
 
     requireAdmin();
