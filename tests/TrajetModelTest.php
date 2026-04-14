@@ -49,4 +49,7 @@ class TrajetModelTest extends TestCase {
 
     $this->assertTrue($result);
 }
+public function testSimpleMath() {
+    $this->assertEquals(2, 1 + 1);
+}
 }
