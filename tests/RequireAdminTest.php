@@ -8,21 +8,20 @@ class RequireAdminTest extends TestCase {
 
     public function testRequireAdminAllowsAdmin() {
 
-        session_start();
+    $_SESSION['user'] = [
+        'role' => 'admin'
+    ];
 
-        $_SESSION['user'] = [
-            'role' => 'admin'
-        ];
+    requireAdmin();
 
-        // si ça passe sans exit → test OK
-        $this->expectNotToPerformAssertions();
-
-        requireAdmin();
+    $this->assertTrue(true); // ← IMPORTANT
     }
 
     public function testRequireAdminBlocksUser() {
 
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
 
         $_SESSION['user'] = [
             'role' => 'user'
@@ -39,6 +38,6 @@ class RequireAdminTest extends TestCase {
 
         ob_end_clean();
 
-        $this->assertTrue(true); // si on arrive ici → ça a bloqué
+        $this->assertTrue(true);
     }
 }

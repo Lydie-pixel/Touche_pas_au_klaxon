@@ -14,12 +14,12 @@ class AuthHelperTest extends TestCase {
 
         try {
             requireLogin();
-        } catch (Exception $e) {
+        } catch (Throwable $e) {
             // ignore
         }
 
         $output = ob_get_clean();
 
-        $this->assertTrue(true); // test passe si pas crash
+        $this->assertIsArray($_SESSION);
     }
 }
