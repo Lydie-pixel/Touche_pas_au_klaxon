@@ -32,13 +32,20 @@ class AuthController {
     $user = $this->model->findByEmail($email);
 
     if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['user'] = $user;
+    $_SESSION['user'] = $user;
+
+    if (!defined('PHPUNIT_RUNNING')) {
         header("Location: /TOUCHE_PAS_AU_KLAXON/");
         exit;
+    }
+
     } else {
         $_SESSION['error'] = "Identifiants incorrects";
-        header("Location: /TOUCHE_PAS_AU_KLAXON/login");
-        exit;
+
+        if (!defined('PHPUNIT_RUNNING')) {
+            header("Location: /TOUCHE_PAS_AU_KLAXON/login");
+            exit;
+        }
     }
 }
 

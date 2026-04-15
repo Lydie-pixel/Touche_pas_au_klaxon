@@ -1,5 +1,9 @@
 <?php
 
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../controllers/AuthController.php';
@@ -10,6 +14,8 @@ class AuthControllerTest extends TestCase {
     public function testAuthenticateSuccess() {
 
         $_SESSION = [];
+        $_POST = [];
+
 
         $db = $this->createMock(PDO::class);
 

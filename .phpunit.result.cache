@@ -1,1 +1,1 @@
-{"version":2,"defects":[],"times":{"AgenceModelTest::testIsUsedReturnsTrueWhenAgencyIsUsed":0.038}}
+{"version":2,"defects":[],"times":{"AgenceModelTest::testIsUsedReturnsTrueWhenAgencyIsUsed":0.039,"AuthControllerTest::testAuthenticateSuccess":0.116,"AuthControllerTest::testAuthenticateFailsWithWrongPassword":0.116,"AuthHelperTest::testRequireLoginRedirectsIfNotLogged":0.002,"RequireAdminTest::testRequireAdminBlocksUser":0,"TrajetModelTest::testGetAvailableTripsReturnsArray":0.001,"TrajetModelTest::testCreateReturnsTrue":0,"TrajetModelTest::testSimpleMath":0}}
