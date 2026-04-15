@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<h2>Gestion des utilisateurs</h2>
+    <h2>Gestion des utilisateurs</h2>
 
     <table class="table table-striped">
         <thead class="table-dark">

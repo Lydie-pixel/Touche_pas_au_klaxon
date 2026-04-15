@@ -1,21 +1,21 @@
 <?php ob_start(); ?>
 
-<h2>Connexion</h2>
+    <h2>Connexion</h2>
 
-<form method="POST" action="/TOUCHE_PAS_AU_KLAXON/login">
+    <form method="POST" action="/TOUCHE_PAS_AU_KLAXON/login">
 
-    <!-- CSRF token should be included in the form to prevent CSRF attacks. -->
-    <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>"> 
+        <!-- CSRF token should be included in the form to prevent CSRF attacks. -->
+        <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>"> 
 
-    <input type="email" name="email" placeholder="Email" required>
-    <br><br>
+        <input type="email" name="email" placeholder="Email" required>
+        <br><br>
 
-    <input type="password" name="password" placeholder="Mot de passe" required>
-    <br><br>
+        <input type="password" name="password" placeholder="Mot de passe" required>
+        <br><br>
 
-    <button class="btn btn-dark" type="submit">Se connecter</button>
+        <button class="btn btn-dark" type="submit">Se connecter</button>
 
-</form>
+    </form>
 
 <?php $content = ob_get_clean(); ?>
 

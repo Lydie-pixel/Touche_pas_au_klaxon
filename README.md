@@ -7,15 +7,18 @@ Application web développée en PHP permettant la gestion de trajets entre diff�
 ##  Fonctionnalités
 
 ###  Utilisateur non connecté
+
 - Consulter les trajets disponibles
 - Accéder à la page de connexion
 
 ### Utilisateur connecté
+
 - Créer un trajet
 - Modifier ses trajets
 - Consulter les trajets disponibles
 
 ### Administrateur
+
 - Accès au tableau de bord
 - Gestion des trajets
 - Gestion des agences
@@ -44,6 +47,7 @@ git clone
 ---
 
 ## Basse de dooneés
+
 1. Importer le fichier SQL :
 database.sql
 2. Configurer la connexion dans :
@@ -52,6 +56,7 @@ config/database.php
 ---
 
 ## Lancement
+
 http://localhost/TOUCHE_PAS_AU_KLAXON/
 
 ---
@@ -76,4 +81,3 @@ vendor/bin/phpunit tests
 ## Auteur
 
 Projet réalisé dans le cadre d’une formation en développement web.
----

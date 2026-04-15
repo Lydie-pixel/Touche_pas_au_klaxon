@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<h2>Créer un trajet</h2>
+    <h2>Créer un trajet</h2>
 
     <form method="POST" action="/TOUCHE_PAS_AU_KLAXON/trajets/create">
         <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
