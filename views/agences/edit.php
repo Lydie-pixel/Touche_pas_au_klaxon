@@ -1,6 +1,6 @@
 <?php ob_start(); ?>
 
-<h2>Modifier une agence</h2>
+    <h2>Modifier une agence</h2>
 
     <table class="table table-striped">
         <thead>

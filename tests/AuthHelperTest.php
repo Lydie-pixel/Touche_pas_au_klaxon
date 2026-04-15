@@ -6,20 +6,12 @@ require_once __DIR__ . '/../controllers/helpers/auth.php';
 
 class AuthHelperTest extends TestCase {
 
-    public function testRequireLoginRedirectsIfNotLogged() {
+public function testRequireLoginRedirectsIfNotLogged() {
 
-        $_SESSION = [];
+    $_SESSION = [];
 
-        ob_start();
+    $this->expectException(Exception::class);
 
-        try {
-            requireLogin();
-        } catch (Throwable $e) {
-            // ignore
-        }
-
-        $output = ob_get_clean();
-
-        $this->assertIsArray($_SESSION);
-    }
+    requireLogin();
+}
 }

@@ -7,8 +7,7 @@
  */
 function requireAdmin() {
     if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-        header("Location: /TOUCHE_PAS_AU_KLAXON/");
-        exit;
+        throw new Exception("Not admin");
     }
 }
 
@@ -19,7 +18,6 @@ function requireAdmin() {
  */
 function requireLogin() {
     if (!isset($_SESSION['user'])) {
-        header("Location: /TOUCHE_PAS_AU_KLAXON/login");
-        exit;
+        throw new Exception("Not logged in");
     }
 }

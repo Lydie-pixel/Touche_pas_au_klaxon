@@ -1,18 +1,18 @@
 <?php ob_start(); ?>
 
-<h2>Modifier un trajet</h2>
+    <h2>Modifier un trajet</h2>
 
     <form method="POST" action="/TOUCHE_PAS_AU_KLAXON/trajets/edit/<?= $trajet['id'] ?>">
         <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
 
-    <select name="departure_id">
-        <label>Départ</label>
-        <?php foreach ($agences as $a): ?>
-            <option value="<?= $a['id'] ?>" <?= $a['id'] == $trajet['departure_id'] ? 'selected' : '' ?>>
-                <?= $a['name'] ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
+        <select name="departure_id">
+            <label>Départ</label>
+            <?php foreach ($agences as $a): ?>
+                <option value="<?= $a['id'] ?>" <?= $a['id'] == $trajet['departure_id'] ? 'selected' : '' ?>>
+                    <?= $a['name'] ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
 
         <br><br>
 
