@@ -58,7 +58,7 @@
                         <?php if ($_SESSION['user']['id'] == $t['user_id']): ?>
 
                             <!-- Modifier -->
-                            <a href="/TOUCHE_PAS_AU_KLAXON/trajets/edit/<?= $t['id'] ?>"class="text-dark" title="Modifier">
+                            <a href="/Touche_pas_au_klaxon/trajets/edit/<?= $t['id'] ?>"class="text-dark" title="Modifier">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
 
@@ -73,7 +73,7 @@
                         <?php elseif ($_SESSION['user']['role'] === 'admin'): ?>
 
                             <!-- Admin peut modifier -->
-                            <a href="/TOUCHE_PAS_AU_KLAXON/trajets/edit/<?= $t['id'] ?>" class="text-dark me-2" title="Modifier">
+                            <a href="/Touche_pas_au_klaxon/trajets/edit/<?= $t['id'] ?>" class="text-dark me-2" title="Modifier">
                                 <i class="bi bi-pencil-square"></i>
                             </a>
 

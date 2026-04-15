@@ -2,7 +2,7 @@
 
     <h2>Créer un trajet</h2>
 
-    <form method="POST" action="/TOUCHE_PAS_AU_KLAXON/trajets/create">
+    <form method="POST" action="/Touche_pas_au_klaxon/trajets/create">
         <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
 
         <label>Départ</label>

@@ -62,7 +62,7 @@ class AgenceController {
 
         $_SESSION['success'] = "Agence créée avec succès ";
 
-        header("Location: /TOUCHE_PAS_AU_KLAXON/");
+        header("Location: /Touche_pas_au_klaxon/");
         exit;
     }
 
@@ -81,14 +81,14 @@ class AgenceController {
 
     if ($this->model->isUsed($id)) {
         $_SESSION['error'] = "Cette agence ne pourra pas être supprimée tant qu'elle est utilisée dans des trajets";
-        header("Location: /TOUCHE_PAS_AU_KLAXON/agences");
+        header("Location: /Touche_pas_au_klaxon/agences");
         exit;
     }
 
     $this->model->delete($id);
 
     $_SESSION['success'] = "Agence supprimée avec succès";
-    header("Location: /TOUCHE_PAS_AU_KLAXON/agences");
+    header("Location: /Touche_pas_au_klaxon/agences");
     exit;
 }
 }

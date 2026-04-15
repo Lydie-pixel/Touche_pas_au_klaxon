@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (empty($_SESSION['csrf'])) {
+if (!isset($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(32));
 }
 

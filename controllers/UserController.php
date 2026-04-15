@@ -58,7 +58,7 @@ class UserController {
 
         $_SESSION['success'] = "Utilisateur créé avec succès ";
 
-        header("Location: /TOUCHE_PAS_AU_KLAXON/");
+        header("Location: /Touche_pas_au_klaxon/");
         exit;
     }
 }
