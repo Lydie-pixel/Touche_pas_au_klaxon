@@ -60,7 +60,7 @@ class TrajetController {
         'date_depart' => $_POST['date_depart'],
         'date_arrival' => $_POST['date_arrival'],
         'seats_total' => $_POST['seats_total'],
-        'seats_available' => $_POST['seats_total']
+        'seats_available' => $_POST['seats_available']
     ];
 
     // Vérifications métier
@@ -81,6 +81,12 @@ class TrajetController {
         $_SESSION['error'] = "La date d’arrivée doit être après la date de départ";
         header("Location: /Touche_pas_au_klaxon/trajets/create");
         exit;
+    }
+
+    if ($_POST['seats_available'] > $_POST['seats_total']) {
+    $_SESSION['error'] = "Les places disponibles ne peuvent pas dépasser le total";
+    header("Location: /Touche_pas_au_klaxon/trajets/create");
+    exit;
     }
 
         $this->model->create($data);
@@ -171,15 +177,18 @@ public function update($id) {
 public function delete($id) {
     requireLogin();
 
-    $this->model->delete($id);
+    $trajet = $this->model->find($id);
 
-    if ($_SESSION['user']['role'] !== 'admin' && $trajet['user_id'] != $_SESSION['user']['id']) {
-    die("Accès interdit");
+    if ($_SESSION['user']['role'] !== 'admin' && 
+        $trajet['user_id'] != $_SESSION['user']['id']) {
+        die("Accès interdit");
     }
+
+    $this->model->delete($id);
 
     $_SESSION['success'] = "Trajet supprimé avec succès";
 
-    header("Location: /Touche_pas_au_klaxon/");
+    header("Location: /touche_pas_au_klaxon/");
     exit;
 }
 }

@@ -66,7 +66,7 @@
                             <button 
                                 class="btn btn-link text-dark"
                                 data-bs-toggle="modal"
-                                data-bs-target="#deleteModal<?= $t['id'] ?>">
+                                data-bs-target="#deleteModalTrajet<?= $t['id'] ?>">
                                 <i class="bi bi-trash3"></i>
                             </button>
 

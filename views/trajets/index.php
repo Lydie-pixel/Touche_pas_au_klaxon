@@ -7,6 +7,7 @@
             <a href="/Touche_pas_au_klaxon/trajets/create" class="btn btn-secondary">+ Ajouter</a>
     <?php endif; ?>
 
+    
     <?php require "views/partials/tableau_trajets.php"; ?>
     <?php require "views/partials/modal.php"; ?>
 

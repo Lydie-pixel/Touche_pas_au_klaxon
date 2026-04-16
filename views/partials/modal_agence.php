@@ -15,7 +15,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
 
-                    <form method="POST" action="/Touche_pas_au_klaxon/agences/delete/<?= $agence['id'] ?>" style="display:inline;">
+                    <form method="POST" action="/touche_pas_au_klaxon/agences/delete/<?= $agence['id'] ?>" style="display:inline;">
                         
                         <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
                         
