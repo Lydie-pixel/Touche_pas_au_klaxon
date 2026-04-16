@@ -35,7 +35,7 @@ class AuthController {
     $_SESSION['user'] = $user;
 
     if (!defined('PHPUNIT_RUNNING')) {
-        header("Location: /TOUCHE_PAS_AU_KLAXON/");
+        header("Location: /Touche_pas_au_klaxon/");
         exit;
     }
 
@@ -43,7 +43,7 @@ class AuthController {
         $_SESSION['error'] = "Identifiants incorrects";
 
         if (!defined('PHPUNIT_RUNNING')) {
-            header("Location: /TOUCHE_PAS_AU_KLAXON/login");
+            header("Location: /Touche_pas_au_klaxon/login");
             exit;
         }
     }

@@ -42,7 +42,7 @@
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
 
-                    <a href="/TOUCHE_PAS_AU_KLAXON/trajets/delete/<?= $t['id'] ?>" 
+                    <a href="/touche_pas_au_klaxon/trajets/delete/<?= $t['id'] ?>" 
                     class="btn btn-danger">
                     Supprimer
                     </a>

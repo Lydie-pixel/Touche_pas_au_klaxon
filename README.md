@@ -59,6 +59,29 @@ config/database.php
 
 http://localhost/TOUCHE_PAS_AU_KLAXON/
 
+### Problèmes de connexion à la base de données
+
+L’application a été développée sous XAMPP. Selon votre environnement, certains paramètres (notamment le port MySQL) peuvent nécessiter une adaptation.
+Si l’application ne se lance pas et affiche une erreur:
+
+#### Vérifications à effectuer :
+
+Vérifier que le serveur MySQL est bien démarré (XAMPP / WAMP)
+Vérifier le port MySQL :
+    Par défaut : 3306
+    XAMPP peut utiliser : 3308
+Adapter la configuration dans :
+    config/database.php
+
+Exemple :
+    $port = '3306'; // ou 330X selon votre configuration
+
+#### Vérifier également :
+
+Le nom de la base de données (touche_pas_au_klaxon)
+Les identifiants (root / mot de passe vide par défaut)
+Que la base est bien importée (fichier SQL fourni)
+
 ---
 
 ## Sécurité

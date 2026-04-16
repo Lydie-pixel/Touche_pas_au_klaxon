@@ -2,7 +2,7 @@
 
     <h2>Connexion</h2>
 
-    <form method="POST" action="/TOUCHE_PAS_AU_KLAXON/login">
+    <form method="POST" action="/Touche_pas_au_klaxon/login">
 
         <!-- CSRF token should be included in the form to prevent CSRF attacks. -->
         <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>"> 

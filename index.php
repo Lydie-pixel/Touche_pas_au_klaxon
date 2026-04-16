@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (empty($_SESSION['csrf'])) {
+if (!isset($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(32));
 }
 
@@ -94,7 +94,7 @@ $router->post('/agences/create', function() use ($db) {
     (new AgenceController($db))->store();
 });
 
-$router->get('/agences/delete/(\d+)', function($id) use ($db) {
+$router->post('/agences/delete/(\d+)', function($id) use ($db) {
     require 'controllers/AgenceController.php';
     $controller = new AgenceController($db);
     $controller->delete($id);

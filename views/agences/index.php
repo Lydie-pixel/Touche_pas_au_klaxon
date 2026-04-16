@@ -2,7 +2,7 @@
 
     <h2><?= $title ?></h2>
 
-    <a href="/TOUCHE_PAS_AU_KLAXON/agences/create" class="btn btn-dark mb-3">
+    <a href="/Touche_pas_au_klaxon/agences/create" class="btn btn-dark mb-3">
         + Ajouter une agence
     </a>
 

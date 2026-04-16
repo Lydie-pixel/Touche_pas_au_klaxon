@@ -2,7 +2,8 @@
 
     <h2>Ajouter une agence</h2>
 
-    <form method="POST" action="/TOUCHE_PAS_AU_KLAXON/agences/create">
+    <form method="POST" action="/Touche_pas_au_klaxon/agences/create">
+        <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
 
         <label>Nom de la ville</label>
         <input type="text" name="name" required class="form-control">
@@ -12,7 +13,7 @@
         <button class="btn btn-dark">Ajouter</button>
     </form>
 
-    <a href="/TOUCHE_PAS_AU_KLAXON/agences" class="btn btn-secondary mt-3">
+    <a href="/Touche_pas_au_klaxon/agences" class="btn btn-secondary mt-3">
         Retour
     </a>
 

@@ -50,10 +50,7 @@ CREATE TABLE trajets (
 
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (departure_id) REFERENCES agences(id),
-    FOREIGN KEY (arrival_id) REFERENCES agences(id),
+    FOREIGN KEY (arrival_id) REFERENCES agences(id)
 
-    CHECK (seats_available <= seats_total),
-    CHECK (departure_id != arrival_id),
-    CHECK (date_arrival > date_depart)
 );
 

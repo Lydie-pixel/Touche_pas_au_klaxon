@@ -4,9 +4,10 @@
 
     <?php
         if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin'): ?>
-            <a href="/TOUCHE_PAS_AU_KLAXON/trajets/create" class="btn btn-secondary">+ Ajouter</a>
+            <a href="/Touche_pas_au_klaxon/trajets/create" class="btn btn-secondary">+ Ajouter</a>
     <?php endif; ?>
 
+    
     <?php require "views/partials/tableau_trajets.php"; ?>
     <?php require "views/partials/modal.php"; ?>
 
